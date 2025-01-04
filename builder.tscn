@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkcylhhj61hqa"]
+
+[ext_resource type="Script" path="res://builder.gd" id="1_qaepj"]
+[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_u8jal"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qaepj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.078125)
+texture = ExtResource("1_u8jal")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1, 0.078125)
+texture = ExtResource("1_u8jal")

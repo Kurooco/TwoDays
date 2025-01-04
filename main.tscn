@@ -7,17 +7,14 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("1_ok1pe")]
-position = Vector2(519, 359)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("1_ok1pe")]
-position = Vector2(569, 444)
-
 [node name="Node2D" parent="." instance=ExtResource("2_0ju8v")]
 position = Vector2(508, 249)
 
 [node name="Builder" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("3_wdqlh")]
-position = Vector2(663, 309)
+position = Vector2(479, 288)
 platform = ExtResource("1_ok1pe")
 pole = ExtResource("4_jeu6f")
 worldmap = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

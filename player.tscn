@@ -25,3 +25,7 @@ texture = ExtResource("2_tipfi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
+limit_left = -2304
+limit_top = -1310
+limit_right = 2304
+limit_bottom = 1310

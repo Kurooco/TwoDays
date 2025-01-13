@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq78ane1yx2ai"]
+[gd_scene load_steps=5 format=3 uid="uid://cq78ane1yx2ai"]
 
 [ext_resource type="Script" path="res://platform.gd" id="1_dkraa"]
 [ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_xt77i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccusl"]
 size = Vector2(50, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhxk"]
+size = Vector2(28, 12)
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["structure"]]
 rotation = -3.14159
@@ -34,3 +37,10 @@ rotation = -3.14159
 shape = SubResource("RectangleShape2D_ccusl")
 one_way_collision = true
 one_way_collision_margin = 5.0
+
+[node name="PlayerDestroy" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDestroy"]
+position = Vector2(2.19345e-05, 7.00001)
+shape = SubResource("RectangleShape2D_jyhxk")

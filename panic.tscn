@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://r3syd6iec5ib"]
+
+[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_131fn"]
+[ext_resource type="Script" path="res://panic.gd" id="1_m0ncc"]
+[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://on_screen_rect.tscn" id="3_itl8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkg7a"]
+
+[node name="Panic" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_m0ncc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tkg7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.25, -0.75)
+scale = Vector2(0.175781, 0.175781)
+texture = ExtResource("1_131fn")
+
+[node name="OnScreenRect" parent="." instance=ExtResource("3_itl8l")]
+top_left_rect = Vector2(-10000, -1296)
+bottom_right_rect = Vector2(10000, 1296)
+
+[connection signal="exit_rect" from="OnScreenRect" to="." method="_on_on_screen_rect_exit_rect"]

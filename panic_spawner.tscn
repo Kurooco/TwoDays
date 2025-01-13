@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy3q78jku1yia"]
+
+[ext_resource type="Script" path="res://panic_spawner.gd" id="1_6bnkt"]
+
+[node name="PanicSpawner" type="Node2D"]
+script = ExtResource("1_6bnkt")

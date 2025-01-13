@@ -1,18 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bek1l3fn70tlf"]
+[gd_scene load_steps=4 format=3 uid="uid://bek1l3fn70tlf"]
 
+[ext_resource type="Script" path="res://pole.gd" id="1_01bfx"]
 [ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_ytqc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siaxe"]
 size = Vector2(50, 10)
 
-[node name="CollisionShape2D" type="CollisionShape2D"]
+[node name="Area2D" type="Area2D" groups=["structure"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_01bfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_siaxe")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-7.62939e-06, -0.157488)
+position = Vector2(0.157488, 0.999993)
+rotation = 1.5708
 scale = Vector2(0.397165, 0.0870494)
 texture = ExtResource("1_ytqc8")

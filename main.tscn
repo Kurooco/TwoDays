@@ -1,21 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=10 format=3 uid="uid://cbpbwbt3gb260"]
 
 [ext_resource type="PackedScene" uid="uid://cq78ane1yx2ai" path="res://platform.tscn" id="1_ok1pe"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://player.tscn" id="2_0ju8v"]
 [ext_resource type="PackedScene" uid="uid://bkcylhhj61hqa" path="res://builder.tscn" id="3_wdqlh"]
 [ext_resource type="PackedScene" uid="uid://bek1l3fn70tlf" path="res://pole.tscn" id="4_jeu6f"]
+[ext_resource type="PackedScene" uid="uid://caujxb4kadxl3" path="res://bomb.tscn" id="5_o8jfo"]
+[ext_resource type="PackedScene" uid="uid://ceelw5x4xkrhp" path="res://coin.tscn" id="5_pvavr"]
+[ext_resource type="PackedScene" uid="uid://1fa4xsk6l5dk" path="res://cannon.tscn" id="6_ihgn7"]
+[ext_resource type="PackedScene" uid="uid://r3syd6iec5ib" path="res://panic.tscn" id="8_kyrh6"]
+[ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://panic_spawner.tscn" id="9_ipclb"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("2_0ju8v")]
-position = Vector2(508, 249)
 
 [node name="Builder" parent="." instance=ExtResource("3_wdqlh")]
-position = Vector2(479, 288)
 
 [node name="Builder" parent="Builder" index="0" node_paths=PackedStringArray("worldmap")]
 platform = ExtResource("1_ok1pe")
 pole = ExtResource("4_jeu6f")
 worldmap = NodePath("../..")
+coins = ExtResource("5_pvavr")
+
+[node name="Cannon" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("6_ihgn7")]
+position = Vector2(-2284, -1262)
+worldmap = NodePath("..")
+bombs = ExtResource("5_o8jfo")
+higher_range = 90
+
+[node name="Cannon2" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("6_ihgn7")]
+position = Vector2(2283, 1264)
+worldmap = NodePath("..")
+bombs = ExtResource("5_o8jfo")
+lower_range = -180
+higher_range = -90
+
+[node name="Panic" parent="." instance=ExtResource("8_kyrh6")]
+
+[node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("9_ipclb")]
+position = Vector2(0, -925)
+amount = 50
+worldmap = NodePath("..")
 
 [editable path="Builder"]

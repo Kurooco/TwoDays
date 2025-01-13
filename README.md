@@ -1,0 +1,1 @@
+- [x] Get rid of structures from overlap list

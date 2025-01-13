@@ -10,6 +10,7 @@
 script = ExtResource("1_iedtl")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 2
 script = ExtResource("1_12cno")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -17,8 +18,10 @@ shape = SubResource("RectangleShape2D_cg5n3")
 debug_color = Color(0, 0.639216, 0.368627, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+modulate = Color(1, 0, 1, 1)
 position = Vector2(5.96046e-08, 2.98023e-08)
 scale = Vector2(0.160156, 0.160156)
 texture = ExtResource("2_tipfi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)

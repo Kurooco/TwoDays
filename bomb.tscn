@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://caujxb4kadxl3"]
+
+[ext_resource type="Script" path="res://bomb.gd" id="1_o2n16"]
+[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_t15u5"]
+[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://on_screen_rect.tscn" id="3_w2cdm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpe5d"]
+radius = 31.257
+
+[node name="Bomb" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_o2n16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(0, 1)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("1_t15u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rpe5d")
+
+[node name="OnScreenRect" parent="." instance=ExtResource("3_w2cdm")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="exit_rect" from="OnScreenRect" to="." method="_on_on_screen_rect_exit_rect"]

@@ -12,7 +12,7 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("2_0ju8v")]
+[node name="Player" parent="." instance=ExtResource("2_0ju8v")]
 
 [node name="Builder" parent="." instance=ExtResource("3_wdqlh")]
 

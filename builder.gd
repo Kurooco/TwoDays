@@ -17,7 +17,7 @@ const STARTING_AMOUNT = 2000
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var coins_placed = []
-	grid_border = get_viewport_rect().size*2
+	grid_border = $"/root/Autoload".border*2#get_viewport_rect().size*2
 	move_and_place(1)
 	
 	while placed < STARTING_AMOUNT: 
@@ -28,8 +28,9 @@ func _ready():
 			if(position.distance_to(i.position) < 400):
 				coin_close = true
 				break
-		if(!coin_close):
+		if(!coin_close && position.distance_to(Vector2.ZERO) < 2000):
 			coins_placed.append(place_coin())
+			$"/root/Autoload".coins += 1
 	
 	#while placed < STARTING_AMOUNT && coins_placed < $"/root/Autoload".coins: 
 	#	var prev = placed

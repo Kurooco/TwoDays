@@ -14,7 +14,12 @@ func _ready():
 func _process(delta):
 	pass
 
-
+func stop():
+	$Timer.stop()
+	
+func set_time(seconds):
+	$Timer.wait_time = seconds
+	
 func _on_timer_timeout():
 	var new_bomb = bombs.instantiate()
 	new_bomb.global_position = global_position

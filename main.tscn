@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=11 format=3 uid="uid://cbpbwbt3gb260"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_ilca8"]
 [ext_resource type="PackedScene" uid="uid://cq78ane1yx2ai" path="res://platform.tscn" id="1_ok1pe"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://player.tscn" id="2_0ju8v"]
 [ext_resource type="PackedScene" uid="uid://bkcylhhj61hqa" path="res://builder.tscn" id="3_wdqlh"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://panic_spawner.tscn" id="9_ipclb"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_ilca8")
 
 [node name="Player" parent="." instance=ExtResource("2_0ju8v")]
 
@@ -41,5 +43,49 @@ higher_range = -90
 position = Vector2(0, -925)
 amount = 50
 worldmap = NodePath("..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Win" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -565.5
+offset_top = 24.0
+offset_right = 565.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "You Saved the Fortress!"
+
+[node name="Death" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -565.5
+offset_top = 24.0
+offset_right = 565.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "You Failed"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 121.0
+one_shot = true
+autostart = true
+
+[node name="TimeLeft" type="Label" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 52.0
+offset_bottom = 34.0
+text = "0:00"
+
+[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Builder"]

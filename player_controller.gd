@@ -2,6 +2,7 @@ extends Node2D
 
 var camera_mode = false
 var outward_zoom : Vector2
+signal player_died
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,3 +22,11 @@ func _process(delta):
 	else:
 		$Camera2D.position = lerp($Camera2D.position, Vector2(0, 0), .03)
 		$Camera2D.zoom = lerp($Camera2D.zoom, outward_zoom, .03)
+
+
+func _on_on_screen_rect_exit_rect():
+	die()
+	hide()
+	
+func die():
+	emit_signal("player_died")

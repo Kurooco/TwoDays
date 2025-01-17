@@ -21,5 +21,6 @@ texture = ExtResource("1_131fn")
 [node name="OnScreenRect" parent="." instance=ExtResource("3_itl8l")]
 top_left_rect = Vector2(-10000, -1296)
 bottom_right_rect = Vector2(10000, 1296)
+use_current_screen_settings = true
 
 [connection signal="exit_rect" from="OnScreenRect" to="." method="_on_on_screen_rect_exit_rect"]

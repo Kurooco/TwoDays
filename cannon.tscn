@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://cannon.gd" id="1_hib73"]
 
-[node name="Cannon" type="Node2D"]
+[node name="Cannon" type="Node2D" groups=["cannons"]]
 script = ExtResource("1_hib73")
 
 [node name="Timer" type="Timer" parent="."]

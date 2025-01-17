@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7gp3tb8il7xm"]
+[gd_scene load_steps=6 format=3 uid="uid://7gp3tb8il7xm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_12cno"]
 [ext_resource type="Script" path="res://player_controller.gd" id="1_iedtl"]
 [ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="2_tipfi"]
+[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://on_screen_rect.tscn" id="4_t5ix3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg5n3"]
 
@@ -23,9 +24,14 @@ position = Vector2(5.96046e-08, 2.98023e-08)
 scale = Vector2(0.160156, 0.160156)
 texture = ExtResource("2_tipfi")
 
+[node name="OnScreenRect" parent="CharacterBody2D" instance=ExtResource("4_t5ix3")]
+use_current_screen_settings = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
 limit_left = -2304
 limit_top = -1310
 limit_right = 2304
 limit_bottom = 1310
+
+[connection signal="exit_rect" from="CharacterBody2D/OnScreenRect" to="." method="_on_on_screen_rect_exit_rect"]

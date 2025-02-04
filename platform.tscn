@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq78ane1yx2ai"]
 
 [ext_resource type="Script" path="res://platform.gd" id="1_dkraa"]
-[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_xt77i"]
+[ext_resource type="Texture2D" uid="uid://cmoo4ojti6bl0" path="res://art/platform.png" id="2_ih02s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccusl"]
 size = Vector2(50, 10)
@@ -23,9 +23,9 @@ one_way_collision_margin = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-7.62939e-06, -0.157488)
-scale = Vector2(0.397165, 0.0870494)
-texture = ExtResource("1_xt77i")
+position = Vector2(0.167991, 1)
+scale = Vector2(-2.5026, -2.3858)
+texture = ExtResource("2_ih02s")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

@@ -1,6 +1,6 @@
 extends Area2D
 
-const FIRE_SPEED = 10
+const FIRE_SPEED = 800
 const RADIUS = 200
 
 var fire_direction
@@ -13,8 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move_local_x(cos(fire_direction)*FIRE_SPEED)
-	move_local_y(sin(fire_direction)*FIRE_SPEED)
+	move_local_x(cos(fire_direction)*FIRE_SPEED*delta)
+	move_local_y(sin(fire_direction)*FIRE_SPEED*delta)
 
 
 func _on_area_entered(area):

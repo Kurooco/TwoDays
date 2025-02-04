@@ -9,10 +9,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$CanvasLayer/TimeLeft.text = str(round($CanvasLayer/Timer.time_left))
+	$CanvasLayer/Coins.text = "Coins left: "+str($"/root/Autoload".coins)
 	if($"/root/Autoload".coins == 0):
 		$CanvasLayer/Win.show()
 		get_tree().call_group("cannons", "stop")
-		$CanvasLayer/Timer.stop()
+		$CanvasLayer/Timer.paused = true
 
 
 func _on_timer_timeout():
@@ -20,4 +21,5 @@ func _on_timer_timeout():
 
 
 func _on_player_player_died():
-	$CanvasLayer/Death.show()
+	if($"/root/Autoload".coins > 0):
+		$CanvasLayer/Death.show()

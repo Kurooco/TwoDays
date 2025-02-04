@@ -12,5 +12,8 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	$"/root/Autoload".coins -= 1
 	queue_free()
+
+
+func _on_tree_exiting():
+	$"/root/Autoload".coins -= 1

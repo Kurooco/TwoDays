@@ -30,7 +30,7 @@ func _ready():
 				break
 		if(!coin_close && position.distance_to(Vector2.ZERO) < 2000):
 			coins_placed.append(place_coin())
-			$"/root/Autoload".coins += 1
+	$"/root/Autoload".coins = coins_placed.size()
 	
 	#while placed < STARTING_AMOUNT && coins_placed < $"/root/Autoload".coins: 
 	#	var prev = placed

@@ -41,7 +41,7 @@ higher_range = -90
 
 [node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("9_ipclb")]
 position = Vector2(0, -925)
-amount = 200
+amount = 50
 worldmap = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

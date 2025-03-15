@@ -24,3 +24,8 @@ func _on_area_entered(area):
 
 func _on_on_screen_rect_exit_rect():
 	queue_free()
+
+
+func _on_body_entered(body):
+	get_tree().call_group("structure", "destroy", position, RADIUS)
+	queue_free()

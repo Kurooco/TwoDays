@@ -55,7 +55,7 @@ func move_and_place(dir):
 	
 	# Check to make sure this spot is not occupied
 	var placement_position = global_position + (direction_map[direction] * (GRID_HEIGHT if direction % 2 == 0 else GRID_WIDTH)/-2)
-	if(taken_spots.has(placement_position) && is_instance_valid(taken_spots[placement_position])):
+	if(taken_spots.has(placement_position) && is_instance_valid(taken_spots[placement_position]) && !taken_spots[placement_position].is_destroyed):
 		return
 	
 	# Place piece

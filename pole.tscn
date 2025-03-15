@@ -6,9 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siaxe"]
 size = Vector2(50, 10)
 
-[node name="Area2D" type="Area2D" groups=["structure"]]
+[node name="Area2D" type="RigidBody2D" groups=["structure"]]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 2
+gravity_scale = 0.0
 script = ExtResource("1_01bfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

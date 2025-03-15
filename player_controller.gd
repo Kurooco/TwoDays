@@ -1,6 +1,7 @@
 extends Node2D
 
 var camera_mode = false
+var camera_rate = .03
 var outward_zoom : Vector2
 signal player_died
 
@@ -17,11 +18,11 @@ func _process(delta):
 	if(Input.is_action_just_pressed("toggle camera")):
 		camera_mode = !camera_mode
 	if(camera_mode):
-		$Camera2D.position = lerp($Camera2D.position, $CharacterBody2D.position, .03)
-		$Camera2D.zoom = lerp($Camera2D.zoom, Vector2(.9, .9), .03)
+		$Camera2D.position = lerp($Camera2D.position, $CharacterBody2D.position, 1 - pow(camera_rate, delta))
+		$Camera2D.zoom = lerp($Camera2D.zoom, Vector2(.9, .9), 1 - pow(camera_rate, delta))
 	else:
-		$Camera2D.position = lerp($Camera2D.position, Vector2(0, 0), .03)
-		$Camera2D.zoom = lerp($Camera2D.zoom, outward_zoom, .03)
+		$Camera2D.position = lerp($Camera2D.position, Vector2(0, 0), 1 - pow(camera_rate, delta))
+		$Camera2D.zoom = lerp($Camera2D.zoom, outward_zoom, 1 - pow(camera_rate, delta))
 
 
 func _on_on_screen_rect_exit_rect():

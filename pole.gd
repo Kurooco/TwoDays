@@ -20,7 +20,7 @@ func _process(delta):
 
 func destroy(p, r):
 	if(p.distance_to(position) < r):
-		set_collision_layer_value(2, false)
+		set_collision_layer_value(3, false)
 		gravity_scale = 1
 		apply_impulse(p.direction_to(position)*200)
 		$CollisionShape2D.set_deferred("one_way_collision", false)

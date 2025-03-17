@@ -19,7 +19,7 @@ func _process(delta):
 
 func _on_area_entered(area):
 	get_tree().call_group("structure", "destroy", position, RADIUS)
-	queue_free()
+	explode()
 
 
 func _on_on_screen_rect_exit_rect():
@@ -28,4 +28,12 @@ func _on_on_screen_rect_exit_rect():
 
 func _on_body_entered(body):
 	get_tree().call_group("structure", "destroy", position, RADIUS)
+	explode()
+
+func explode():
+	$Explosion.emitting = true
+	$Sprite2D.hide()
+	$CollisionShape2D.set_deferred("disabled", true)
+
+func _on_explosion_finished():
 	queue_free()

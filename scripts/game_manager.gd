@@ -18,9 +18,13 @@ func add_scene_to_stack(level: PackedScene):
 func pop():
 	if(!level_stack.is_empty()):
 		level_stack.pop_back().queue_free()
-		if(!level_stack.is_empty()):
-			add_child(level_stack.back())
+		#if(!level_stack.is_empty()):
+		#	add_child(level_stack.back())
 
 func replace_with_scene(level: PackedScene):
 	pop()
 	add_scene_to_stack(level)
+
+func clear_stack():
+	while(!level_stack.is_empty()):
+		pop()

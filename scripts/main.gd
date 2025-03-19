@@ -14,6 +14,8 @@ func _process(delta):
 		#$CanvasLayer/Win.show()
 		get_tree().call_group("cannons", "stop")
 		$CanvasLayer/Timer.paused = true
+		Autoload.game_manager.add_scene_to_stack(load("res://scenes/win_screen.tscn"))
+		set_process(false)
 
 
 func _on_timer_timeout():

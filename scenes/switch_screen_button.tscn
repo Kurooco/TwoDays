@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgli77mh004mr"]
+[gd_scene load_steps=3 format=3 uid="uid://dgli77mh004mr"]
 
 [ext_resource type="Script" path="res://scripts/switch_screen_button.gd" id="1_v6x2l"]
+[ext_resource type="Theme" uid="uid://dqbpmu56mfygv" path="res://resources/button_theme.tres" id="1_vf2yi"]
 
 [node name="SwitchScreenButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+theme = ExtResource("1_vf2yi")
 text = "Switch"
 script = ExtResource("1_v6x2l")
 

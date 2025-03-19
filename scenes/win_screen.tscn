@@ -1,8 +1,16 @@
-[gd_scene format=3 uid="uid://dfueu34mftwxs"]
+[gd_scene load_steps=5 format=3 uid="uid://dfueu34mftwxs"]
+
+[ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_32iou"]
+[ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_wdlkv"]
+[ext_resource type="PackedScene" uid="uid://dk1kchy4lstom" path="res://scenes/menu.tscn" id="3_xybes"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bg4t"]
+bg_color = Color(0.580392, 0.290196, 0.666667, 0.780392)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
+z_index = -1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -14,10 +22,28 @@ offset_right = 368.0
 offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bg4t")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 243.0
-offset_top = 155.0
-offset_right = 453.0
-offset_bottom = 178.0
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.5
+offset_top = 15.0
+offset_right = 202.5
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_32iou")
+theme_override_font_sizes/font_size = 30
 text = "Okay, so you won. Big deal."
+
+[node name="SwitchScreenButton" parent="." instance=ExtResource("2_wdlkv")]
+offset_left = 456.0
+offset_top = 288.0
+offset_right = 693.0
+offset_bottom = 351.0
+text = "Back to Menu
+"
+scene = ExtResource("3_xybes")
+replacement_mode = 2

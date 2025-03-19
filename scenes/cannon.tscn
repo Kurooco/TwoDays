@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1fa4xsk6l5dk"]
 
-[ext_resource type="Script" path="res://cannon.gd" id="1_hib73"]
+[ext_resource type="Script" path="res://scripts/cannon.gd" id="1_hib73"]
 
 [node name="Cannon" type="Node2D" groups=["cannons"]]
 script = ExtResource("1_hib73")

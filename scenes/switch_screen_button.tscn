@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgli77mh004mr"]
 
-[ext_resource type="Script" path="res://switch_screen_button.gd" id="1_v6x2l"]
+[ext_resource type="Script" path="res://scripts/switch_screen_button.gd" id="1_v6x2l"]
 
 [node name="SwitchScreenButton" type="Button"]
 offset_right = 8.0

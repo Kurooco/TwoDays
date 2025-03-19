@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cq78ane1yx2ai"]
 
-[ext_resource type="Script" path="res://platform.gd" id="1_dkraa"]
-[ext_resource type="Texture2D" uid="uid://cmoo4ojti6bl0" path="res://art/platform.png" id="2_ih02s"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_x4jcs"]
+[ext_resource type="Texture2D" uid="uid://cmoo4ojti6bl0" path="res://art/platform.png" id="2_khe61"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l64j7"]
 bounce = 0.3
@@ -18,7 +18,7 @@ collision_layer = 6
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_l64j7")
 gravity_scale = 0.0
-script = ExtResource("1_dkraa")
+script = ExtResource("1_x4jcs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -32,7 +32,7 @@ z_index = -1
 position = Vector2(0.167991, 1)
 rotation = -3.14159
 scale = Vector2(2.5026, 2.3858)
-texture = ExtResource("2_ih02s")
+texture = ExtResource("2_khe61")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

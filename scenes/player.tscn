@@ -1,18 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://7gp3tb8il7xm"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_12cno"]
-[ext_resource type="Script" path="res://player_controller.gd" id="1_iedtl"]
-[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="2_tipfi"]
-[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://on_screen_rect.tscn" id="4_t5ix3"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_6bhof"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_p61tf"]
+[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="3_07e06"]
+[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://scenes/on_screen_rect.tscn" id="4_1ynb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg5n3"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_iedtl")
+script = ExtResource("1_6bhof")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_mask = 2
-script = ExtResource("1_12cno")
+script = ExtResource("2_p61tf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_cg5n3")
@@ -22,9 +22,9 @@ debug_color = Color(0, 0.639216, 0.368627, 0.419608)
 modulate = Color(1, 0, 1, 1)
 position = Vector2(5.96046e-08, 2.98023e-08)
 scale = Vector2(0.160156, 0.160156)
-texture = ExtResource("2_tipfi")
+texture = ExtResource("3_07e06")
 
-[node name="OnScreenRect" parent="CharacterBody2D" instance=ExtResource("4_t5ix3")]
+[node name="OnScreenRect" parent="CharacterBody2D" instance=ExtResource("4_1ynb3")]
 use_current_screen_settings = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

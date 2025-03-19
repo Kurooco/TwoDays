@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dfueu34mftwxs"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -198.0
+offset_right = 368.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 243.0
+offset_top = 155.0
+offset_right = 453.0
+offset_bottom = 178.0
+text = "Okay, so you won. Big deal."

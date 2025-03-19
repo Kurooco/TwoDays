@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bek1l3fn70tlf"]
 
-[ext_resource type="Script" path="res://pole.gd" id="1_01bfx"]
-[ext_resource type="Texture2D" uid="uid://cmoo4ojti6bl0" path="res://art/platform.png" id="2_tuh23"]
+[ext_resource type="Script" path="res://scripts/pole.gd" id="1_jotij"]
+[ext_resource type="Texture2D" uid="uid://cmoo4ojti6bl0" path="res://art/platform.png" id="2_n3t44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siaxe"]
 size = Vector2(50, 10)
@@ -10,7 +10,7 @@ size = Vector2(50, 10)
 collision_layer = 4
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_01bfx")
+script = ExtResource("1_jotij")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -22,4 +22,4 @@ z_index = -1
 position = Vector2(0.367716, 1.21021)
 rotation = 1.5708
 scale = Vector2(2.49259, 1.92496)
-texture = ExtResource("2_tuh23")
+texture = ExtResource("2_n3t44")

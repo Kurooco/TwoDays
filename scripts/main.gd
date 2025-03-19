@@ -11,7 +11,7 @@ func _process(delta):
 	$CanvasLayer/TimeLeft.text = str(round($CanvasLayer/Timer.time_left))
 	$CanvasLayer/Coins.text = "Coins left: "+str($"/root/Autoload".coins)
 	if($"/root/Autoload".coins == 0):
-		$CanvasLayer/Win.show()
+		#$CanvasLayer/Win.show()
 		get_tree().call_group("cannons", "stop")
 		$CanvasLayer/Timer.paused = true
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-var panic : PackedScene = load("res://panic.tscn")
+var panic : PackedScene = load("res://scenes/panic.tscn")
 @export var amount : int
 @export var worldmap : Node
 

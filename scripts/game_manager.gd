@@ -10,9 +10,6 @@ func _ready():
 	add_scene_to_stack(opening_scene)
 	
 func add_scene_to_stack(level: PackedScene):
-	#if(current_scene != null):
-	#	current_scene.hide()
-		
 	var new_level = level.instantiate()
 	add_child(new_level)
 	level_stack.append(new_level)

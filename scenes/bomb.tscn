@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://caujxb4kadxl3"]
 
-[ext_resource type="Script" path="res://bomb.gd" id="1_o2n16"]
-[ext_resource type="Texture2D" uid="uid://brl4lf0d8mhoh" path="res://art/bomb.png" id="2_t0seh"]
-[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://on_screen_rect.tscn" id="3_w2cdm"]
-[ext_resource type="Texture2D" uid="uid://b3vpyal4pxgck" path="res://art/explosion.png" id="4_pqkye"]
+[ext_resource type="Script" path="res://scripts/bomb.gd" id="1_bdpsa"]
+[ext_resource type="Texture2D" uid="uid://brl4lf0d8mhoh" path="res://art/bomb.png" id="2_jym6u"]
+[ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://scenes/on_screen_rect.tscn" id="3_uj6sf"]
+[ext_resource type="Texture2D" uid="uid://b3vpyal4pxgck" path="res://art/explosion.png" id="4_k27xe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpe5d"]
 radius = 31.257
@@ -14,17 +14,17 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 [node name="Bomb" type="Area2D"]
 collision_layer = 8
 collision_mask = 4
-script = ExtResource("1_o2n16")
+script = ExtResource("1_bdpsa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.00002, 4.99998)
 scale = Vector2(3.02406, 3.02406)
-texture = ExtResource("2_t0seh")
+texture = ExtResource("2_jym6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rpe5d")
 
-[node name="OnScreenRect" parent="." instance=ExtResource("3_w2cdm")]
+[node name="OnScreenRect" parent="." instance=ExtResource("3_uj6sf")]
 use_current_screen_settings = true
 
 [node name="Explosion" type="CPUParticles2D" parent="."]
@@ -33,7 +33,7 @@ amount = 30
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
-texture = ExtResource("4_pqkye")
+texture = ExtResource("4_k27xe")
 spread = 180.0
 gravity = Vector2(0, 900)
 initial_velocity_min = 100.0

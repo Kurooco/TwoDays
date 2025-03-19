@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk1kchy4lstom"]
 
-[ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://switch_screen_button.tscn" id="1_tw2xr"]
-[ext_resource type="PackedScene" uid="uid://cbpbwbt3gb260" path="res://main.tscn" id="2_6icf1"]
+[ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="1_fju84"]
+[ext_resource type="PackedScene" uid="uid://cbpbwbt3gb260" path="res://scenes/main.tscn" id="2_6icf1"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -17,7 +17,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Defend the Fortress!"
 
-[node name="SwitchScreenButton" parent="." instance=ExtResource("1_tw2xr")]
+[node name="SwitchScreenButton" parent="." instance=ExtResource("1_fju84")]
 offset_left = 460.0
 offset_top = 336.0
 offset_right = 685.0

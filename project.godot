@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Two Days"
-run/main_scene="res://game_manager.tscn"
+run/main_scene="res://scenes/game_manager.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Autoload="*res://autoload.gd"
+Autoload="*res://scripts/autoload.gd"
 
 [display]
 

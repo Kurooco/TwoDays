@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkcylhhj61hqa"]
+[gd_scene load_steps=5 format=3 uid="uid://bkcylhhj61hqa"]
 
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_qaepj"]
 [ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_u8jal"]
+[ext_resource type="Script" path="res://scripts/target.gd" id="3_d4fih"]
+[ext_resource type="Texture2D" uid="uid://ctpfr0mfuoi16" path="res://art/crosshair2.png" id="4_fqlbe"]
 
 [node name="Node2D" type="Node2D"]
 modulate = Color(1, 0, 0, 1)
 self_modulate = Color(1, 0, 0, 1)
 
-[node name="Builder" type="Node2D" parent="."]
+[node name="Builder" type="Node2D" parent="." groups=["restartable"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qaepj")
 
@@ -21,14 +23,24 @@ scale = Vector2(1, 0.078125)
 texture = ExtResource("1_u8jal")
 
 [node name="Timer" type="Timer" parent="Builder"]
-wait_time = 0.3
+wait_time = 0.2
 autostart = true
 
-[node name="Target" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 0, 0, 1)
+[node name="Target" type="Node2D" parent="."]
 position = Vector2(138.25, 88.25)
-scale = Vector2(0.558594, 0.558594)
-texture = ExtResource("1_u8jal")
+script = ExtResource("3_d4fih")
+
+[node name="Crosshair1" type="Sprite2D" parent="Target"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-2.25, 0.75)
+scale = Vector2(5, 5)
+texture = ExtResource("4_fqlbe")
+offset = Vector2(0.25, 0.249998)
+
+[node name="Crosshair2" type="Sprite2D" parent="Target"]
+modulate = Color(1, 0, 0, 0.560784)
+position = Vector2(0.75, -0.25)
+scale = Vector2(11, 11)
+texture = ExtResource("4_fqlbe")
 
 [connection signal="timeout" from="Builder/Timer" to="Builder" method="_on_timer_timeout"]

@@ -26,8 +26,7 @@ func _process(delta):
 		$Camera2D.zoom = lerp($Camera2D.zoom, outward_zoom, 1 - pow(camera_rate, delta))
 
 func _on_on_screen_rect_exit_rect():
-	die()
-	hide()
+	pass
 	
 func die():
 	emit_signal("player_died")
@@ -40,3 +39,7 @@ func lock_camera_out():
 func lock_camera_in():
 	camera_locked = true
 	camera_mode = true
+
+func _on_on_screen_rect_fell():
+	die()
+	hide()

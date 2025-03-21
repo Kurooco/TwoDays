@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfueu34mftwxs"]
+[gd_scene load_steps=6 format=3 uid="uid://dfueu34mftwxs"]
 
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_32iou"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_wdlkv"]
 [ext_resource type="PackedScene" uid="uid://dk1kchy4lstom" path="res://scenes/menu.tscn" id="3_xybes"]
+[ext_resource type="Script" path="res://scenes/retry_button.gd" id="4_lj5ro"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bg4t"]
 bg_color = Color(0.580392, 0.290196, 0.666667, 0.780392)
@@ -47,3 +48,12 @@ text = "Back to Menu
 "
 scene = ExtResource("3_xybes")
 replacement_mode = 2
+
+[node name="Retry" parent="." instance=ExtResource("2_wdlkv")]
+offset_left = 456.0
+offset_top = 363.0
+offset_right = 693.0
+offset_bottom = 426.0
+text = "Retry
+"
+script = ExtResource("4_lj5ro")

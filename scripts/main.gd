@@ -24,4 +24,6 @@ func _on_timer_timeout():
 
 func _on_player_player_died():
 	if($"/root/Autoload".coins > 0):
-		$CanvasLayer/Death.show()
+		Autoload.game_manager.add_scene_to_stack(load("res://scenes/lose_screen.tscn"))
+
+

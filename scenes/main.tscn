@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=10 format=3 uid="uid://cbpbwbt3gb260"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7gt0r"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://scenes/player.tscn" id="2_4h0qy"]
@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://ceelw5x4xkrhp" path="res://scenes/coin.tscn" id="6_tbgy5"]
 [ext_resource type="PackedScene" uid="uid://1fa4xsk6l5dk" path="res://scenes/cannon.tscn" id="7_6gntm"]
 [ext_resource type="PackedScene" uid="uid://caujxb4kadxl3" path="res://scenes/bomb.tscn" id="8_qpn4l"]
-[ext_resource type="PackedScene" uid="uid://r3syd6iec5ib" path="res://scenes/panic.tscn" id="9_2x36s"]
 [ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://scenes/panic_spawner.tscn" id="10_sjkyb"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7gt0r")
 
 [node name="Player" parent="." instance=ExtResource("2_4h0qy")]
+position = Vector2(11, -21)
 
 [node name="Builder" parent="." instance=ExtResource("3_2cp71")]
 
@@ -36,8 +36,6 @@ worldmap = NodePath("..")
 bombs = ExtResource("8_qpn4l")
 lower_range = -180
 higher_range = -90
-
-[node name="Panic" parent="." instance=ExtResource("9_2x36s")]
 
 [node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("10_sjkyb")]
 position = Vector2(0, -925)
@@ -93,6 +91,7 @@ offset_bottom = 34.0
 text = "Coins left: 0"
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
+[connection signal="hidden" from="PanicSpawner" to="." method="_on_panic_spawner_hidden"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Builder"]

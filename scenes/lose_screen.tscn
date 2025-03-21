@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dne4cgfiubcvc"]
+
+[ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_qb4aj"]
+[ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_b1as4"]
+[ext_resource type="PackedScene" uid="uid://dk1kchy4lstom" path="res://scenes/menu.tscn" id="3_dhwcu"]
+[ext_resource type="Script" path="res://scenes/retry_button.gd" id="4_7roee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3281"]
+bg_color = Color(0.816588, 0, 0.0998015, 0.780392)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -198.0
+offset_right = 368.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y3281")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 15.0
+offset_right = 138.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_qb4aj")
+theme_override_font_sizes/font_size = 30
+text = "Ha! What an idiot."
+
+[node name="SwitchScreenButton" parent="." instance=ExtResource("2_b1as4")]
+offset_left = 456.0
+offset_top = 288.0
+offset_right = 693.0
+offset_bottom = 351.0
+text = "Back to Menu
+"
+scene = ExtResource("3_dhwcu")
+replacement_mode = 2
+
+[node name="Retry" parent="." instance=ExtResource("2_b1as4")]
+offset_left = 456.0
+offset_top = 363.0
+offset_right = 693.0
+offset_bottom = 426.0
+text = "Retry
+"
+script = ExtResource("4_7roee")

@@ -42,4 +42,8 @@ func _physics_process(delta):
 
 
 func _on_on_screen_rect_exit_rect():
+	pass
+
+
+func _on_on_screen_rect_fell():
 	queue_free()

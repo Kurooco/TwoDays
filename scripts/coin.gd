@@ -12,8 +12,18 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	queue_free()
+	$AnimatedSprite2D.hide()
 
 
 func _on_tree_exiting():
-	$"/root/Autoload".coins -= 1
+	pass
+
+
+func _on_cpu_particles_2d_finished():
+	queue_free()
+
+
+func _on_animated_sprite_2d_hidden():
+	$CPUParticles2D.emitting = true
+	if(!Autoload.retrying):
+		$"/root/Autoload".coins -= 1

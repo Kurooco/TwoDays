@@ -25,3 +25,4 @@ bottom_right_rect = Vector2(10000, 1296)
 use_current_screen_settings = true
 
 [connection signal="exit_rect" from="OnScreenRect" to="." method="_on_on_screen_rect_exit_rect"]
+[connection signal="fell" from="OnScreenRect" to="." method="_on_on_screen_rect_fell"]

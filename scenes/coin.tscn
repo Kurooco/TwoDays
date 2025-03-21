@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ceelw5x4xkrhp"]
+[gd_scene load_steps=18 format=3 uid="uid://ceelw5x4xkrhp"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_35rb2"]
 [ext_resource type="Texture2D" uid="uid://drecvgltrqi1s" path="res://art/box_animation.png" id="2_e0y0s"]
+[ext_resource type="Texture2D" uid="uid://xhydlo27cafe" path="res://art/white_sparkle.png" id="3_scsbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8ta5"]
 size = Vector2(78, 68)
@@ -91,6 +92,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_5hknc"]
+colors = PackedColorArray(0.239216, 0.847059, 0.952941, 1, 0.839216, 0, 1, 0)
+
 [node name="Area2D" type="Area2D"]
 collision_layer = 0
 collision_mask = 17
@@ -108,5 +112,22 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.671557
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-2, -2)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.83
+texture = ExtResource("3_scsbf")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 400.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_5hknc")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="hidden" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_hidden"]
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

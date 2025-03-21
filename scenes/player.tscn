@@ -10,7 +10,7 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6bhof")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["restartable"]]
 collision_mask = 2
 script = ExtResource("2_p61tf")
 
@@ -35,3 +35,4 @@ limit_right = 2304
 limit_bottom = 1310
 
 [connection signal="exit_rect" from="CharacterBody2D/OnScreenRect" to="." method="_on_on_screen_rect_exit_rect"]
+[connection signal="fell" from="CharacterBody2D/OnScreenRect" to="." method="_on_on_screen_rect_fell"]

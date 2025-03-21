@@ -10,14 +10,14 @@
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -248.0
+offset_left = -217.0
 offset_top = 182.0
-offset_right = 248.0
+offset_right = 239.0
 offset_bottom = 259.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_fou4e")
 theme_override_font_sizes/font_size = 50
-text = "Defend the Fortress!"
+text = "Save the Fortress!"
 
 [node name="SwitchScreenButton" parent="." instance=ExtResource("1_fju84")]
 offset_left = 460.0

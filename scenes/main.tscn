@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=11 format=3 uid="uid://cbpbwbt3gb260"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7gt0r"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://scenes/player.tscn" id="2_4h0qy"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ceelw5x4xkrhp" path="res://scenes/coin.tscn" id="6_tbgy5"]
 [ext_resource type="PackedScene" uid="uid://1fa4xsk6l5dk" path="res://scenes/cannon.tscn" id="7_6gntm"]
 [ext_resource type="PackedScene" uid="uid://caujxb4kadxl3" path="res://scenes/bomb.tscn" id="8_qpn4l"]
+[ext_resource type="Texture2D" uid="uid://doejtja3mytex" path="res://art/city_back.png" id="10_hd2he"]
 [ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://scenes/panic_spawner.tscn" id="10_sjkyb"]
 
 [node name="Main" type="Node2D"]
@@ -39,7 +40,6 @@ higher_range = -90
 
 [node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("10_sjkyb")]
 position = Vector2(0, -925)
-amount = 20
 worldmap = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -89,6 +89,65 @@ offset_top = 11.0
 offset_right = 155.0
 offset_bottom = 34.0
 text = "Coins left: 0"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -489)
+scale = Vector2(0.8, 0.8)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+modulate = Color(0.0840353, 0.000109329, 0.224007, 1)
+position = Vector2(1355, 1616.25)
+scale = Vector2(1, 3.14)
+texture = ExtResource("10_hd2he")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 1000)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.152274, 0.000284934, 0.360943, 1)
+position = Vector2(-268, 1277)
+scale = Vector2(1, 3.14)
+texture = ExtResource("10_hd2he")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color(0.212956, 0.000527898, 0.482716, 1)
+position = Vector2(-616, 1376)
+scale = Vector2(1, 3.14)
+texture = ExtResource("10_hd2he")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(0.358544, 0.0914364, 0.435451, 1)
+position = Vector2(580, 1159)
+scale = Vector2(1, 1.998)
+texture = ExtResource("10_hd2he")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.95, 0.95)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color(0.459497, 0.131204, 0.554491, 1)
+position = Vector2(-266, 2322)
+scale = Vector2(2, 3.996)
+texture = ExtResource("10_hd2he")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="hidden" from="PanicSpawner" to="." method="_on_panic_spawner_hidden"]

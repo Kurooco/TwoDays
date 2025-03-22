@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://kt34kulg8jrc"]
+
+[ext_resource type="Texture2D" uid="uid://djthyg2f1312p" path="res://art/popsicle2.png" id="1_x5min"]
+[ext_resource type="Texture2D" uid="uid://dvkjqkshdr8sw" path="res://art/popsicle2_green.png" id="2_7url4"]
+[ext_resource type="Texture2D" uid="uid://dgpm1uah1644k" path="res://art/popsicle2_purple.png" id="3_dipcw"]
+[ext_resource type="Texture2D" uid="uid://cwhhde0c54oi7" path="res://art/popsicle2_red.png" id="4_aiyjt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x5min")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7url4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dipcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aiyjt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

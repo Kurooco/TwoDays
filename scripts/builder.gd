@@ -64,6 +64,7 @@ func restart(prev_builder):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print_debug(Autoload.coins)
+	await get_tree().process_frame
 	if(Input.is_action_just_pressed("call builder")):
 		target_position = get_global_mouse_position()
 		$"../Target".global_position = target_position

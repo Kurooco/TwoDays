@@ -3,57 +3,68 @@
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_32iou"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_wdlkv"]
 [ext_resource type="PackedScene" uid="uid://dk1kchy4lstom" path="res://scenes/menu.tscn" id="3_xybes"]
-[ext_resource type="Script" path="res://scenes/retry_button.gd" id="4_lj5ro"]
+[ext_resource type="PackedScene" uid="uid://cbpbwbt3gb260" path="res://scenes/main.tscn" id="4_sai3g"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bg4t"]
-bg_color = Color(0.580392, 0.290196, 0.666667, 0.780392)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xlcc"]
+bg_color = Color(0.708881, 0.00033499, 0.697108, 0.780392)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
 z_index = -1
-anchors_preset = 8
+custom_minimum_size = Vector2(1000, 150)
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -368.0
-offset_top = -198.0
-offset_right = 368.0
-offset_bottom = 198.0
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 150.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7bg4t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xlcc")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -202.5
+offset_left = -132.0
 offset_top = 15.0
-offset_right = 202.5
+offset_right = 138.0
 offset_bottom = 46.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_32iou")
 theme_override_font_sizes/font_size = 30
-text = "Okay, so you won. Big deal."
+text = "You saved the fortress!"
+horizontal_alignment = 1
 
-[node name="SwitchScreenButton" parent="." instance=ExtResource("2_wdlkv")]
-offset_left = 456.0
-offset_top = 288.0
-offset_right = 693.0
-offset_bottom = 351.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -90.0
+offset_right = 400.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="SwitchScreenButton" parent="Panel/HBoxContainer" instance=ExtResource("2_wdlkv")]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Back to Menu
 "
 scene = ExtResource("3_xybes")
 replacement_mode = 2
 
-[node name="Retry" parent="." instance=ExtResource("2_wdlkv")]
-offset_left = 456.0
-offset_top = 363.0
-offset_right = 693.0
-offset_bottom = 426.0
-text = "Retry
+[node name="SwitchScreenButton2" parent="Panel/HBoxContainer" instance=ExtResource("2_wdlkv")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Game
 "
-script = ExtResource("4_lj5ro")
+scene = ExtResource("4_sai3g")
+replacement_mode = 2

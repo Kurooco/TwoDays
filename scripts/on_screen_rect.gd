@@ -15,8 +15,10 @@ func _process(delta):
 			emit_signal("exit_rect")
 		elif(global_position.y > $"/root/Autoload".border.y*1.99 || global_position.y < -$"/root/Autoload".border.y*2):
 			emit_signal("fell")
+			set_process(false)
 	else:
 		if(global_position.x < top_left_rect.x || global_position.x > bottom_right_rect.x || global_position.y < top_left_rect.y || global_position.y > bottom_right_rect.y):
 			emit_signal("exit_rect")
 		elif(global_position.y > bottom_right_rect.y):
 			emit_signal("fell")
+			set_process(false)

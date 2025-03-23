@@ -19,7 +19,7 @@ shape = SubResource("RectangleShape2D_cg5n3")
 debug_color = Color(0, 0.639216, 0.368627, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-modulate = Color(1, 0, 1, 1)
+modulate = Color(100, 100, 100, 1)
 position = Vector2(5.96046e-08, 2.98023e-08)
 scale = Vector2(0.160156, 0.160156)
 texture = ExtResource("3_07e06")

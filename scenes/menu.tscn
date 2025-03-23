@@ -1,30 +1,119 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk1kchy4lstom"]
+[gd_scene load_steps=6 format=3 uid="uid://dk1kchy4lstom"]
 
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="1_fju84"]
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_fou4e"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_kcslb"]
 [ext_resource type="PackedScene" uid="uid://cbpbwbt3gb260" path="res://scenes/main.tscn" id="2_6icf1"]
+[ext_resource type="Texture2D" uid="uid://doejtja3mytex" path="res://art/city_back.png" id="4_ka8yd"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kcslb")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.255447, 0.000135019, 7.3977e-05, 1)
+theme_override_colors/font_shadow_color = Color(0.866957, 0.0801624, 0.000113107, 0.45098)
+theme_override_colors/font_outline_color = Color(0.89083, 0.000368008, 0.0271106, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_fou4e")
+theme_override_font_sizes/font_size = 100
+text = "Save the Fortress!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -217.0
-offset_top = 182.0
-offset_right = 239.0
-offset_bottom = 259.0
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 300.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_fou4e")
-theme_override_font_sizes/font_size = 50
-text = "Save the Fortress!"
 
-[node name="SwitchScreenButton" parent="." instance=ExtResource("1_fju84")]
-offset_left = 460.0
-offset_top = 336.0
-offset_right = 685.0
-offset_bottom = 409.0
+[node name="SwitchScreenButton" parent="VBoxContainer" instance=ExtResource("1_fju84")]
+custom_minimum_size = Vector2(50, 80)
+layout_mode = 2
 text = "Start
 "
 scene = ExtResource("2_6icf1")
 replacement_mode = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -489)
+scale = Vector2(0.8, 0.8)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+modulate = Color(0.0840353, 0.000109329, 0.224007, 1)
+position = Vector2(1355, 1616.25)
+scale = Vector2(1, 3.14)
+texture = ExtResource("4_ka8yd")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 1000)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -96)
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.152274, 0.000284934, 0.360943, 1)
+position = Vector2(-268, 1277)
+scale = Vector2(1, 3.14)
+texture = ExtResource("4_ka8yd")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color(0.212956, 0.000527898, 0.482716, 1)
+position = Vector2(-616, 1376)
+scale = Vector2(1, 3.14)
+texture = ExtResource("4_ka8yd")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -67)
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(0.358544, 0.0914364, 0.435451, 1)
+position = Vector2(580, 1159)
+scale = Vector2(1, 1.998)
+texture = ExtResource("4_ka8yd")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -246)
+motion_scale = Vector2(0.95, 0.95)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color(0.459497, 0.131204, 0.554491, 1)
+position = Vector2(-266, 2322)
+scale = Vector2(2, 3.996)
+texture = ExtResource("4_ka8yd")
+region_enabled = true
+region_rect = Rect2(0, 0, 7000, 1000)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

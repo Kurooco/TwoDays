@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dne4cgfiubcvc"]
+[gd_scene load_steps=8 format=3 uid="uid://dne4cgfiubcvc"]
 
+[ext_resource type="Script" path="res://scenes/lose_screen.gd" id="1_bsdm0"]
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_qb4aj"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_b1as4"]
 [ext_resource type="PackedScene" uid="uid://dk1kchy4lstom" path="res://scenes/menu.tscn" id="3_dhwcu"]
@@ -10,6 +11,7 @@
 bg_color = Color(0.816588, 0, 0.0998015, 0.780392)
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_bsdm0")
 
 [node name="Panel" type="Panel" parent="."]
 z_index = -1

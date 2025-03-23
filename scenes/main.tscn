@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=12 format=3 uid="uid://cbpbwbt3gb260"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7gt0r"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://scenes/player.tscn" id="2_4h0qy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1fa4xsk6l5dk" path="res://scenes/cannon.tscn" id="7_6gntm"]
 [ext_resource type="PackedScene" uid="uid://caujxb4kadxl3" path="res://scenes/bomb.tscn" id="8_qpn4l"]
 [ext_resource type="Texture2D" uid="uid://doejtja3mytex" path="res://art/city_back.png" id="10_hd2he"]
+[ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="10_qgs6v"]
 [ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://scenes/panic_spawner.tscn" id="10_sjkyb"]
 
 [node name="Main" type="Node2D"]
@@ -40,6 +41,7 @@ higher_range = -90
 
 [node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("10_sjkyb")]
 position = Vector2(0, -925)
+amount = 50
 worldmap = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -81,6 +83,7 @@ offset_left = 12.0
 offset_top = 11.0
 offset_right = 52.0
 offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("10_qgs6v")
 text = "0:00"
 
 [node name="Coins" type="Label" parent="CanvasLayer"]
@@ -88,6 +91,7 @@ offset_left = 65.0
 offset_top = 11.0
 offset_right = 155.0
 offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("10_qgs6v")
 text = "Coins left: 0"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

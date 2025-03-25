@@ -18,7 +18,7 @@ var restart_coins = []
 const GRID_WIDTH = 50
 const GRID_HEIGHT = 50
 var grid_border
-const STARTING_AMOUNT = 2000
+const STARTING_AMOUNT = 2000 #2000
 const COIN_SEPERATION = 300 #400
 
 # Called when the node enters the scene tree for the first time.
@@ -65,7 +65,7 @@ func restart(prev_builder):
 func _process(delta):
 	#print_debug(Autoload.coins)
 	await get_tree().process_frame
-	if(Input.is_action_just_pressed("call builder")):
+	if(Input.is_action_just_pressed("call builder") && Autoload.can_target):
 		target_position = get_global_mouse_position()
 		$"../Target".global_position = target_position
 		#$CanvasLayer/Target.global_position = target_position/4 + (grid_border)/2

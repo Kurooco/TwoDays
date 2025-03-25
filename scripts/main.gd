@@ -14,7 +14,9 @@ func _process(delta):
 		#$CanvasLayer/Win.show()
 		get_tree().call_group("cannons", "stop")
 		$CanvasLayer/Timer.paused = true
-		Autoload.game_manager.add_scene_to_stack(load("res://scenes/win_screen.tscn"))
+		Autoload.game_manager.add_scene_to_stack(load("res://scenes/win_screen.tscn"), false)
+		$WinSound.play()
+		$MainSong.stop()
 		set_process(false)
 
 
@@ -25,6 +27,15 @@ func _on_timer_timeout():
 func _on_player_player_died():
 	if($"/root/Autoload".coins > 0):
 		print_debug("died")
-		Autoload.game_manager.add_scene_to_stack(load("res://scenes/lose_screen.tscn"))
+		$LoseSound.play()
+		$MainSong.stop()
+		Autoload.game_manager.add_scene_to_stack(load("res://scenes/lose_screen.tscn"), false)
 
+
+func _on_pause_focus_entered():
+	Autoload.can_target = false
+
+
+func _on_pause_focus_exited():
+	Autoload.can_target = true
 

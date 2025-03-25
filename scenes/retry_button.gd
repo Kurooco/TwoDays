@@ -15,4 +15,4 @@ func _on_button_down():
 	Autoload.retrying = true
 	await get_tree().physics_frame
 	Autoload.game_manager.clear_stack()
-	Autoload.game_manager.add_scene_to_stack(load("res://scenes/main.tscn"))
+	Autoload.game_manager.add_scene_to_stack(load("res://scenes/main.tscn"), false)

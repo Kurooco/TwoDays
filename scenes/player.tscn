@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://7gp3tb8il7xm"]
+[gd_scene load_steps=7 format=3 uid="uid://7gp3tb8il7xm"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_6bhof"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_p61tf"]
 [ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="3_07e06"]
 [ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://scenes/on_screen_rect.tscn" id="4_1ynb3"]
+[ext_resource type="Texture2D" uid="uid://c0o0t1lr0iiyg" path="res://art/crosshair.png" id="5_1u788"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg5n3"]
 
@@ -26,6 +27,9 @@ texture = ExtResource("3_07e06")
 
 [node name="OnScreenRect" parent="CharacterBody2D" instance=ExtResource("4_1ynb3")]
 use_current_screen_settings = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/OnScreenRect"]
+texture = ExtResource("5_1u788")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)

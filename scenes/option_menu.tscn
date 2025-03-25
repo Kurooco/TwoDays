@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq42jpp6r5j5q"]
+
+[ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="1_gj8n4"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(800, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -377.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SwitchScreenButton" parent="Panel" instance=ExtResource("1_gj8n4")]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 24.0
+offset_right = 125.0
+offset_bottom = 75.0
+text = "Back"
+replacement_mode = 3

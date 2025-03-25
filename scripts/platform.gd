@@ -7,6 +7,7 @@ var is_destroyed = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sprite2D.frame = randi()%4
+	set_physics_process(false)
 	pass # Replace with function body.
 
 
@@ -29,4 +30,5 @@ func destroy(p, r):
 		apply_impulse(p.direction_to(position)*200)
 		$CollisionShape2D.set_deferred("one_way_collision", false)
 		is_destroyed = true
+		set_physics_process(true)
 		#queue_free()

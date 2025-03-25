@@ -11,7 +11,6 @@ func _ready():
 		new_p.position = Vector2(randi()%500 - 250, position.y)
 		worldmap.add_child.call_deferred(new_p)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=20 format=3 uid="uid://cbpbwbt3gb260"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7gt0r"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://scenes/player.tscn" id="2_4h0qy"]
@@ -11,6 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://doejtja3mytex" path="res://art/city_back.png" id="10_hd2he"]
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="10_qgs6v"]
 [ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://scenes/panic_spawner.tscn" id="10_sjkyb"]
+[ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="11_1nfum"]
+[ext_resource type="Texture2D" uid="uid://bb8dy7lbstkcl" path="res://art/pause.png" id="12_jb38j"]
+[ext_resource type="PackedScene" uid="uid://cq42jpp6r5j5q" path="res://scenes/option_menu.tscn" id="13_f6o4o"]
+[ext_resource type="AudioStream" uid="uid://cst482c8pkw8x" path="res://sound/lose.wav" id="15_7aunk"]
+[ext_resource type="AudioStream" uid="uid://bnydkao2h7ntd" path="res://sound/fancy drums.wav" id="16_a4j74"]
+[ext_resource type="AudioStream" uid="uid://cgfyr46v0rdv4" path="res://sound/Lesser Known (short).wav" id="17_mc3c1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh44g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86qb4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7gt0r")
@@ -40,8 +52,8 @@ lower_range = -180
 higher_range = -90
 
 [node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("10_sjkyb")]
-position = Vector2(0, -925)
-amount = 50
+position = Vector2(0, -698)
+amount = 20
 worldmap = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -87,12 +99,29 @@ theme_override_fonts/font = ExtResource("10_qgs6v")
 text = "0:00"
 
 [node name="Coins" type="Label" parent="CanvasLayer"]
-offset_left = 65.0
-offset_top = 11.0
-offset_right = 155.0
-offset_bottom = 34.0
+offset_left = 12.0
+offset_top = 32.0
+offset_right = 116.0
+offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("10_qgs6v")
 text = "Coins left: 0"
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("11_1nfum")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_right = -5.0
+offset_bottom = 30.0
+grow_horizontal = 0
+scale = Vector2(1.2, 1.2)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yh44g")
+theme_override_styles/focus = SubResource("StyleBoxFlat_86qb4")
+text = ""
+icon = ExtResource("12_jb38j")
+flat = true
+scene = ExtResource("13_f6o4o")
+set_pause = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -153,8 +182,19 @@ texture = ExtResource("10_hd2he")
 region_enabled = true
 region_rect = Rect2(0, 0, 7000, 1000)
 
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_7aunk")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_a4j74")
+
+[node name="MainSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_mc3c1")
+
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="hidden" from="PanicSpawner" to="." method="_on_panic_spawner_hidden"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
+[connection signal="focus_entered" from="CanvasLayer/Pause" to="." method="_on_pause_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/Pause" to="." method="_on_pause_focus_exited"]
 
 [editable path="Builder"]

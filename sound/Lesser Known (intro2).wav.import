@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhb8rve17a2hu"
+path="res://.godot/imported/Lesser Known (intro2).wav-91ca309741cdcfa2c83b00a932d6588c.sample"
+
+[deps]
+
+source_file="res://sound/Lesser Known (intro2).wav"
+dest_files=["res://.godot/imported/Lesser Known (intro2).wav-91ca309741cdcfa2c83b00a932d6588c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=14
+compress/mode=0

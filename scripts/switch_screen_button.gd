@@ -6,6 +6,7 @@ extends Button
 @export var set_pause : bool
 
 func _on_button_down():
+	print_debug(scene)
 	if(replacement_mode == 0):
 		Autoload.game_manager.pause_current(set_pause)
 		Autoload.game_manager.add_scene_to_stack(scene, hide_previous_screen)

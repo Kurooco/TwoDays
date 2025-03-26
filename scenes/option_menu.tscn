@@ -35,6 +35,7 @@ offset_top = -377.0
 offset_right = 250.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 20
 
 [node name="SwitchScreenButton" parent="Panel" instance=ExtResource("1_gj8n4")]
 layout_mode = 0

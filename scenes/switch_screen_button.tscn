@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dqbpmu56mfygv" path="res://resources/button_theme.tres" id="1_vf2yi"]
 
 [node name="SwitchScreenButton" type="Button"]
+custom_minimum_size = Vector2(0, 50)
 offset_right = 8.0
 offset_bottom = 8.0
 theme = ExtResource("1_vf2yi")

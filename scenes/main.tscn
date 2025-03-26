@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cbpbwbt3gb260"]
+[gd_scene load_steps=19 format=3 uid="uid://cbpbwbt3gb260"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7gt0r"]
 [ext_resource type="PackedScene" uid="uid://7gp3tb8il7xm" path="res://scenes/player.tscn" id="2_4h0qy"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dy3q78jku1yia" path="res://scenes/panic_spawner.tscn" id="10_sjkyb"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="11_1nfum"]
 [ext_resource type="Texture2D" uid="uid://bb8dy7lbstkcl" path="res://art/pause.png" id="12_jb38j"]
-[ext_resource type="PackedScene" uid="uid://jb72pdaf4dvy" path="res://scenes/game_options_menu.tscn" id="13_vv6jr"]
 [ext_resource type="AudioStream" uid="uid://cst482c8pkw8x" path="res://sound/lose.wav" id="15_7aunk"]
 [ext_resource type="AudioStream" uid="uid://bnydkao2h7ntd" path="res://sound/fancy drums.wav" id="16_a4j74"]
 [ext_resource type="AudioStream" uid="uid://cgfyr46v0rdv4" path="res://sound/Lesser Known (short).wav" id="17_mc3c1"]
@@ -120,7 +119,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_86qb4")
 text = ""
 icon = ExtResource("12_jb38j")
 flat = true
-scene = ExtResource("13_vv6jr")
+scene = "res://scenes/game_options_menu.tscn"
 set_pause = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

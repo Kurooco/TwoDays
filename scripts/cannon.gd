@@ -1,5 +1,6 @@
 extends Node2D
 
+@export_enum("Absolute", "Top-Right", "Top-Left", "Bottom-Right", "Bottom-Left") var cannon_positioning : int
 @export var worldmap : Node
 @export var bombs : PackedScene
 @export var lower_range : int
@@ -7,8 +8,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	if(cannon_positioning == 1):
+		position = Vector2(Autoload.border.x*2, -Autoload.border.y*2)
+	if(cannon_positioning == 2):
+		position = Vector2(-Autoload.border.x*2, -Autoload.border.y*2)
+	if(cannon_positioning == 3):
+		position = Vector2(Autoload.border.x*2, Autoload.border.y*2)
+	if(cannon_positioning == 4):
+		position = Vector2(-Autoload.border.x*2, Autoload.border.y*2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

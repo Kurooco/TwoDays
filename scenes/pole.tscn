@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bek1l3fn70tlf"]
 
-[ext_resource type="Script" path="res://scripts/pole.gd" id="1_jotij"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_p23i6"]
 [ext_resource type="SpriteFrames" uid="uid://kt34kulg8jrc" path="res://resources/popsicle.tres" id="2_pwmc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_siaxe"]
@@ -10,7 +10,7 @@ size = Vector2(50, 10)
 collision_layer = 4
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_jotij")
+script = ExtResource("1_p23i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

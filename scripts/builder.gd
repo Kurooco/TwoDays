@@ -121,12 +121,14 @@ func move(direction):
 
 func _on_timer_timeout():
 	if(target_position != null && randi()%3 != -1):
-		if(abs(target_position.x - global_position.x) > abs(target_position.y - global_position.y)):
+		if(abs(target_position.x - global_position.x) > abs(target_position.y - global_position.y) || already_placed_verticle):
+			already_placed_verticle = false
 			if(target_position.x - global_position.x < 0):
 				move_and_place(3)
 			else:
 				move_and_place(1)
 		else:
+			already_placed_verticle = true
 			if(target_position.y - global_position.y < 0):
 				move_and_place(0)
 			else:

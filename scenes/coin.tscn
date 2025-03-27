@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://ceelw5x4xkrhp"]
+[gd_scene load_steps=19 format=3 uid="uid://ceelw5x4xkrhp"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_35rb2"]
 [ext_resource type="Texture2D" uid="uid://drecvgltrqi1s" path="res://art/box_animation.png" id="2_e0y0s"]
 [ext_resource type="Texture2D" uid="uid://xhydlo27cafe" path="res://art/white_sparkle.png" id="3_scsbf"]
+[ext_resource type="AudioStream" uid="uid://8xgwvxrctotc" path="res://sound/coin (1).wav" id="4_2rb5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8ta5"]
 size = Vector2(78, 68)
@@ -126,6 +127,11 @@ orbit_velocity_min = -1.0
 orbit_velocity_max = 1.0
 scale_amount_max = 4.0
 color_ramp = SubResource("Gradient_5hknc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2rb5q")
+volume_db = 12.0
+bus = &"sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

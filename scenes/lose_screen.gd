@@ -4,6 +4,7 @@ var tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$Panel.modulate.a = 0
 	$Panel.scale = Vector2()
 	tween = get_tree().create_tween()

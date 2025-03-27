@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://jb72pdaf4dvy"]
+[gd_scene load_steps=4 format=3 uid="uid://jb72pdaf4dvy"]
 
 [ext_resource type="PackedScene" uid="uid://cq42jpp6r5j5q" path="res://scenes/option_menu.tscn" id="1_7po05"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_5pbqo"]
+[ext_resource type="StyleBox" uid="uid://ci6ctg8r625dj" path="res://resources/menu_panel.tres" id="2_qfv3s"]
 
 [node name="Control" instance=ExtResource("1_7po05")]
+
+[node name="Panel" parent="." index="1"]
+theme_override_styles/panel = ExtResource("2_qfv3s")
 
 [node name="SwitchScreenButton" parent="Panel/VBoxContainer" index="0" instance=ExtResource("2_5pbqo")]
 layout_mode = 2
 text = "Go to Main Menu"
 scene = "res://scenes/menu.tscn"
 replacement_mode = 2
+
+[node name="SwitchScreenButton2" parent="Panel/VBoxContainer" index="1" instance=ExtResource("2_5pbqo")]
+layout_mode = 2
+text = "Adjust Volume"
+scene = "res://scenes/volume_menu.tscn"
+hide_previous_screen = true

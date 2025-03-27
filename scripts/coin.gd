@@ -25,5 +25,6 @@ func _on_cpu_particles_2d_finished():
 
 func _on_animated_sprite_2d_hidden():
 	$CPUParticles2D.emitting = true
+	$AudioStreamPlayer2D.play()
 	if(!Autoload.retrying):
 		$"/root/Autoload".coins -= 1

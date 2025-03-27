@@ -183,12 +183,16 @@ region_rect = Rect2(0, 0, 7000, 1000)
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_7aunk")
+bus = &"music"
 
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_a4j74")
+bus = &"music"
 
 [node name="MainSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_mc3c1")
+autoplay = true
+bus = &"music"
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="hidden" from="PanicSpawner" to="." method="_on_panic_spawner_hidden"]

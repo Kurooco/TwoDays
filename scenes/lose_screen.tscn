@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dne4cgfiubcvc"]
+[gd_scene load_steps=6 format=3 uid="uid://dne4cgfiubcvc"]
 
 [ext_resource type="Script" path="res://scenes/lose_screen.gd" id="1_bsdm0"]
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_qb4aj"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="2_b1as4"]
-[ext_resource type="PackedScene" uid="uid://dk1kchy4lstom" path="res://scenes/menu.tscn" id="3_dhwcu"]
 [ext_resource type="Script" path="res://scenes/retry_button.gd" id="4_7roee"]
-[ext_resource type="PackedScene" uid="uid://cbpbwbt3gb260" path="res://scenes/main.tscn" id="4_cm8ck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3281"]
 bg_color = Color(0.816588, 0, 0.0998015, 0.780392)
@@ -68,7 +66,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "New Game
 "
-scene = ExtResource("4_cm8ck")
+scene = "res://scenes/main.tscn"
 replacement_mode = 2
 
 [node name="SwitchScreenButton" parent="Panel/HBoxContainer" instance=ExtResource("2_b1as4")]
@@ -76,5 +74,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Back to Menu
 "
-scene = ExtResource("3_dhwcu")
+scene = "res://scenes/menu.tscn"
 replacement_mode = 2

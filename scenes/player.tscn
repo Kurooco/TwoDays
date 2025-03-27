@@ -31,6 +31,9 @@ use_current_screen_settings = true
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/OnScreenRect"]
 texture = ExtResource("5_1u788")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D"]
+current = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
 limit_left = -2304

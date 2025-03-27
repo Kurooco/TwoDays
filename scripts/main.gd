@@ -17,6 +17,7 @@ func _process(delta):
 		Autoload.game_manager.add_scene_to_stack(load("res://scenes/win_screen.tscn"), false)
 		$WinSound.play()
 		$MainSong.stop()
+		$CanvasLayer/Pause.hide()
 		set_process(false)
 
 
@@ -29,6 +30,7 @@ func _on_player_player_died():
 		print_debug("died")
 		$LoseSound.play()
 		$MainSong.stop()
+		$CanvasLayer/Pause.hide()
 		Autoload.game_manager.add_scene_to_stack(load("res://scenes/lose_screen.tscn"), false)
 
 

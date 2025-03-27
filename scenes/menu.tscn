@@ -56,7 +56,9 @@ replacement_mode = 1
 [node name="SwitchScreenButton2" parent="VBoxContainer" instance=ExtResource("1_fju84")]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-scene = "res://scenes/option_menu.tscn"
+text = "Options
+"
+scene = "res://scenes/menu_options_menu.tscn"
 hide_previous_screen = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -126,3 +128,5 @@ position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_q4urr")
+autoplay = true
+bus = &"music"

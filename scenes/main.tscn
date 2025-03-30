@@ -193,7 +193,6 @@ bus = &"music"
 
 [node name="MainSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_mc3c1")
-autoplay = true
 bus = &"music"
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

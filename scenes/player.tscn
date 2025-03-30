@@ -1,12 +1,100 @@
-[gd_scene load_steps=7 format=3 uid="uid://7gp3tb8il7xm"]
+[gd_scene load_steps=18 format=3 uid="uid://7gp3tb8il7xm"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_6bhof"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_p61tf"]
-[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="3_07e06"]
+[ext_resource type="Texture2D" uid="uid://chnxmr76s8tli" path="res://art/player_animationbox9.png" id="3_ertt5"]
+[ext_resource type="Texture2D" uid="uid://cr7g5835vjcw0" path="res://art/box12.png" id="3_mombx"]
 [ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://scenes/on_screen_rect.tscn" id="4_1ynb3"]
-[ext_resource type="Texture2D" uid="uid://c0o0t1lr0iiyg" path="res://art/crosshair.png" id="5_1u788"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg5n3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw0x5"]
+atlas = ExtResource("3_ertt5")
+region = Rect2(428, 2, 69, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqtj4"]
+atlas = ExtResource("3_mombx")
+region = Rect2(1, 1, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhjpo"]
+atlas = ExtResource("3_mombx")
+region = Rect2(2, 2, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fghrm"]
+atlas = ExtResource("3_mombx")
+region = Rect2(73, 2, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q62ud"]
+atlas = ExtResource("3_mombx")
+region = Rect2(144, 2, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfjl5"]
+atlas = ExtResource("3_mombx")
+region = Rect2(215, 2, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkacx"]
+atlas = ExtResource("3_mombx")
+region = Rect2(2, 73, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw8lx"]
+atlas = ExtResource("3_mombx")
+region = Rect2(73, 73, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud2mx"]
+atlas = ExtResource("3_mombx")
+region = Rect2(144, 73, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov3i1"]
+atlas = ExtResource("3_mombx")
+region = Rect2(215, 73, 68, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5r8mi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw0x5")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqtj4")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhjpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fghrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q62ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfjl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkacx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw8lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud2mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov3i1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6bhof")
@@ -19,17 +107,22 @@ script = ExtResource("2_p61tf")
 shape = SubResource("RectangleShape2D_cg5n3")
 debug_color = Color(0, 0.639216, 0.368627, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-modulate = Color(100, 100, 100, 1)
-position = Vector2(5.96046e-08, 2.98023e-08)
-scale = Vector2(0.160156, 0.160156)
-texture = ExtResource("3_07e06")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(5.96046e-08, -3)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5r8mi")
+animation = &"jump"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/Sprite2D"]
+root_node = NodePath("../..")
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D/Sprite2D/AnimationPlayer"]
+root_node = NodePath("../../..")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("..")
 
 [node name="OnScreenRect" parent="CharacterBody2D" instance=ExtResource("4_1ynb3")]
 use_current_screen_settings = true
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/OnScreenRect"]
-texture = ExtResource("5_1u788")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D"]
 current = true

@@ -117,7 +117,7 @@ motion_scale = Vector2(0.95, 0.95)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 modulate = Color(0.459497, 0.131204, 0.554491, 1)
-position = Vector2(-266, 2322)
+position = Vector2(-266, 2199)
 scale = Vector2(2, 3.996)
 texture = ExtResource("4_ka8yd")
 region_enabled = true
@@ -128,5 +128,4 @@ position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_q4urr")
-autoplay = true
 bus = &"music"

@@ -42,5 +42,4 @@ func lock_camera_in():
 
 func _on_on_screen_rect_fell():
 	die()
-	print_debug("Yep, that's gone")
 	hide()

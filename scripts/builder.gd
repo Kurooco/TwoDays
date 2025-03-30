@@ -18,7 +18,7 @@ var restart_coins = []
 const GRID_WIDTH = 50
 const GRID_HEIGHT = 50
 var grid_border
-const STARTING_AMOUNT = 4000 #2000
+const STARTING_AMOUNT = 2000 #2000
 const COIN_SEPERATION = 300 #400
 
 # Called when the node enters the scene tree for the first time.

@@ -1,10 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://r3syd6iec5ib"]
+[gd_scene load_steps=10 format=3 uid="uid://r3syd6iec5ib"]
 
-[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_131fn"]
 [ext_resource type="Script" path="res://scripts/panic.gd" id="1_m0ncc"]
+[ext_resource type="Texture2D" uid="uid://cqag0msodsedg" path="res://art/box2.png" id="2_qagcj"]
 [ext_resource type="PackedScene" uid="uid://dpwx6uuswyfeb" path="res://scenes/on_screen_rect.tscn" id="3_kerte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkg7a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04vby"]
+atlas = ExtResource("2_qagcj")
+region = Rect2(1, 1, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0p8h"]
+atlas = ExtResource("2_qagcj")
+region = Rect2(73, 1, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyqhd"]
+atlas = ExtResource("2_qagcj")
+region = Rect2(145, 1, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnwuo"]
+atlas = ExtResource("2_qagcj")
+region = Rect2(217, 1, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgwnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04vby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0p8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyqhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnwuo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Panic" type="CharacterBody2D"]
 collision_layer = 16
@@ -14,10 +50,12 @@ script = ExtResource("1_m0ncc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tkg7a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.25, -0.75)
-scale = Vector2(0.175781, 0.175781)
-texture = ExtResource("1_131fn")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -5)
+scale = Vector2(1.94643, 1.94643)
+sprite_frames = SubResource("SpriteFrames_dgwnm")
+autoplay = "default"
+frame_progress = 0.771559
 
 [node name="OnScreenRect" parent="." instance=ExtResource("3_kerte")]
 top_left_rect = Vector2(-10000, -1296)

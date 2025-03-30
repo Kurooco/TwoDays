@@ -3,8 +3,10 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	var tween = get_tree().create_tween().set_loops(0)
+	tween.tween_property($AnimatedSprite2D, "modulate", Color.RED, .5)
+	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, .5)
+	tween.bind_node($"..")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

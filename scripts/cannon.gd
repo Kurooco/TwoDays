@@ -5,9 +5,12 @@ extends Node2D
 @export var bombs : PackedScene
 @export var lower_range : int
 @export var higher_range : int
+@export var autostart = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if(!autostart):
+		stop()
 	if(cannon_positioning == 1):
 		position = Vector2(Autoload.border.x*2, -Autoload.border.y*2)
 	if(cannon_positioning == 2):
@@ -23,6 +26,9 @@ func _process(delta):
 
 func stop():
 	$Timer.stop()
+	
+func start():
+	$Timer.start()
 	
 func set_time(seconds):
 	$Timer.wait_time = seconds

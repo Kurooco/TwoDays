@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpe6p8j5xahea"]
+
+[ext_resource type="PackedScene" uid="uid://cq42jpp6r5j5q" path="res://scenes/option_menu.tscn" id="1_rbfk2"]
+[ext_resource type="Theme" uid="uid://dqbpmu56mfygv" path="res://resources/button_theme.tres" id="2_jvtsw"]
+
+[node name="Control" instance=ExtResource("1_rbfk2")]
+
+[node name="Label" type="Label" parent="Panel" index="2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_top = 18.0
+offset_right = 52.5
+offset_bottom = 60.0
+grow_horizontal = 2
+theme = ExtResource("2_jvtsw")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Label2" type="Label" parent="Panel" index="3"]
+layout_mode = 1
+offset_left = 58.0
+offset_top = 118.0
+offset_right = 818.0
+offset_bottom = 163.0
+theme = ExtResource("2_jvtsw")
+text = "I did the art, programming, music, and sound effects for this game. 
+
+The font used is \"Workbench\" from Google Fonts.
+Music and sound effects were made with GarageBand.
+Art was created primarily using Microsoft's Paint 3D, with occasional
+use of the Scratch sprite editor."

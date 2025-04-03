@@ -1,16 +1,24 @@
 extends Area2D
 
+var turn_red = true
+@onready var sprite = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var tween = get_tree().create_tween().set_loops(0)
-	tween.tween_property($AnimatedSprite2D, "modulate", Color.RED, .5)
-	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, .5)
-	tween.bind_node($"..")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if(turn_red):
+		sprite.modulate.b = move_toward(sprite.modulate.b, 0, delta)
+		sprite.modulate.g = sprite.modulate.b
+		if(sprite.modulate.b == 0):
+			turn_red = false
+	else:
+		sprite.modulate.b = move_toward(sprite.modulate.b, 1, delta)
+		sprite.modulate.g = sprite.modulate.b
+		if(sprite.modulate.b == 1):
+			turn_red = true
 
 
 func _on_body_entered(body):

@@ -51,11 +51,11 @@ script = ExtResource("1_m0ncc")
 shape = SubResource("RectangleShape2D_tkg7a")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, -5)
-scale = Vector2(1.94643, 1.94643)
+position = Vector2(-0.437496, -5)
+scale = Vector2(1.55893, 1.94643)
 sprite_frames = SubResource("SpriteFrames_dgwnm")
 autoplay = "default"
-frame_progress = 0.771559
+frame_progress = 0.481992
 
 [node name="OnScreenRect" parent="." instance=ExtResource("3_kerte")]
 top_left_rect = Vector2(-10000, -1296)

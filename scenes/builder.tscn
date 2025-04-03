@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkcylhhj61hqa"]
+[gd_scene load_steps=6 format=3 uid="uid://bkcylhhj61hqa"]
 
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_qaepj"]
-[ext_resource type="Texture2D" uid="uid://54xw02u713du" path="res://icon.svg" id="1_u8jal"]
 [ext_resource type="Script" path="res://scripts/target.gd" id="3_d4fih"]
+[ext_resource type="Texture2D" uid="uid://b3vpyal4pxgck" path="res://art/explosion.png" id="3_wrsr3"]
 [ext_resource type="Texture2D" uid="uid://ctpfr0mfuoi16" path="res://art/crosshair2.png" id="4_fqlbe"]
+[ext_resource type="AudioStream" uid="uid://bf8wupoek34rg" path="res://sound/call.wav" id="5_2o0wf"]
 
 [node name="Node2D" type="Node2D"]
 modulate = Color(1, 0, 0, 1)
@@ -13,18 +14,13 @@ self_modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qaepj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Builder"]
-scale = Vector2(1, 0.078125)
-texture = ExtResource("1_u8jal")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Builder"]
-rotation = 1.5708
-scale = Vector2(1, 0.078125)
-texture = ExtResource("1_u8jal")
-
 [node name="Timer" type="Timer" parent="Builder"]
 wait_time = 0.2
 autostart = true
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Builder"]
+scale = Vector2(2.86, 2.86)
+texture = ExtResource("3_wrsr3")
 
 [node name="Target" type="Node2D" parent="."]
 visible = false
@@ -43,5 +39,8 @@ modulate = Color(1, 0, 0, 0.560784)
 position = Vector2(0.75, -0.25)
 scale = Vector2(11, 11)
 texture = ExtResource("4_fqlbe")
+
+[node name="FocusSound" type="AudioStreamPlayer" parent="Target"]
+stream = ExtResource("5_2o0wf")
 
 [connection signal="timeout" from="Builder/Timer" to="Builder" method="_on_timer_timeout"]

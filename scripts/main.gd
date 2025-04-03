@@ -41,3 +41,8 @@ func _on_pause_focus_entered():
 func _on_pause_focus_exited():
 	Autoload.can_target = true
 
+
+func _on_grace_time_timeout():
+	$Cannon.start()
+	await get_tree().create_timer(1).timeout
+	$Cannon2.start()

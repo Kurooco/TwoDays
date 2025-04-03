@@ -16,6 +16,6 @@ func _process(delta):
 	$Crosshair2.scale.y = move_toward($Crosshair2.scale.y, 15, delta*50)
 	
 func focus():
-	print_debug("Focus")
+	$FocusSound.play()
 	$Crosshair1.scale = Vector2.ZERO
 	$Crosshair2.scale = Vector2(40, 40)

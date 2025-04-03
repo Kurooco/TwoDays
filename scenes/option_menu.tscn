@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq42jpp6r5j5q"]
+[gd_scene load_steps=3 format=3 uid="uid://cq42jpp6r5j5q"]
 
+[ext_resource type="StyleBox" uid="uid://ci6ctg8r625dj" path="res://resources/menu_panel.tres" id="1_0dl4h"]
 [ext_resource type="PackedScene" uid="uid://dgli77mh004mr" path="res://scenes/switch_screen_button.tscn" id="1_gj8n4"]
 
 [node name="Control" type="CanvasLayer"]
@@ -21,6 +22,7 @@ offset_right = 400.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_0dl4h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 custom_minimum_size = Vector2(500, 300)

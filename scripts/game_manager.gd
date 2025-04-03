@@ -55,3 +55,9 @@ func set_pause_subtree(root: Node, pause: bool) -> void:
 		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_IGNORE])
 	else:
 		root.propagate_call("set", ["mouse_filter", Control.MOUSE_FILTER_PASS])
+
+func play_global_sound(sound: AudioStreamWAV):
+	var audio_player = AudioStreamPlayer.new()
+	audio_player.stream = sound
+	audio_player.connect("finished", queue_free)
+	add_child(audio_player)

@@ -43,6 +43,7 @@ cannon_positioning = 2
 worldmap = NodePath("..")
 bombs = ExtResource("8_qpn4l")
 higher_range = 90
+autostart = false
 
 [node name="Cannon2" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("7_6gntm")]
 position = Vector2(2283, 1264)
@@ -51,6 +52,7 @@ worldmap = NodePath("..")
 bombs = ExtResource("8_qpn4l")
 lower_range = -180
 higher_range = -90
+autostart = false
 
 [node name="PanicSpawner" parent="." node_paths=PackedStringArray("worldmap") instance=ExtResource("10_sjkyb")]
 position = Vector2(0, -698)
@@ -193,12 +195,20 @@ bus = &"music"
 
 [node name="MainSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_mc3c1")
+volume_db = -1.284
+autoplay = true
 bus = &"music"
+
+[node name="GraceTime" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
 
 [connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="hidden" from="PanicSpawner" to="." method="_on_panic_spawner_hidden"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="focus_entered" from="CanvasLayer/Pause" to="." method="_on_pause_focus_entered"]
 [connection signal="focus_exited" from="CanvasLayer/Pause" to="." method="_on_pause_focus_exited"]
+[connection signal="timeout" from="GraceTime" to="." method="_on_grace_time_timeout"]
 
 [editable path="Builder"]

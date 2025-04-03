@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Two Days"
+config/name="Save The Fortress"
 run/main_scene="res://scenes/game_manager.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.088364, 0.0565692, 0.254323, 1)
+config/icon="res://art/bomb.png"
 
 [autoload]
 
@@ -26,6 +27,10 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="Two Days"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/DJsul/OneDrive/Documents/Godot_v4.2.1-stable_mono_win64  --NEW--/TwoDays/movies/movie.avi"
 
 [input]
 

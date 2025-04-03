@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7eu84eh44n7q"]
+
+[ext_resource type="PackedScene" uid="uid://cq42jpp6r5j5q" path="res://scenes/option_menu.tscn" id="1_psf2c"]
+[ext_resource type="StyleBox" uid="uid://ci6ctg8r625dj" path="res://resources/menu_panel.tres" id="2_cinlp"]
+[ext_resource type="Texture2D" uid="uid://c41gc8i62g3qj" path="res://art/screen_shots/coin.PNG" id="2_ffdfx"]
+[ext_resource type="Texture2D" uid="uid://fu27tq14t83h" path="res://art/screen_shots/bots.PNG" id="3_kmaku"]
+[ext_resource type="Texture2D" uid="uid://bw7nealf3gtin" path="res://art/screen_shots/fall.png" id="4_xdsw6"]
+[ext_resource type="Theme" uid="uid://dqbpmu56mfygv" path="res://resources/button_theme.tres" id="5_wjuxg"]
+[ext_resource type="Texture2D" uid="uid://2q00nmu2uok5" path="res://art/screen_shots/builder.png" id="6_lu7ij"]
+[ext_resource type="Texture2D" uid="uid://blko2owqnv33h" path="res://art/screen_shots/target.PNG" id="7_354oi"]
+[ext_resource type="Texture2D" uid="uid://curyrqft1xhb2" path="res://art/screen_shots/bomb.png" id="8_pq05u"]
+
+[node name="Control" instance=ExtResource("1_psf2c")]
+
+[node name="Panel" parent="." index="1"]
+offset_left = -473.5
+offset_top = -296.0
+offset_right = 473.5
+offset_bottom = 296.0
+theme_override_styles/panel = ExtResource("2_cinlp")
+
+[node name="TextureRect" type="Sprite2D" parent="Panel" index="2"]
+position = Vector2(96.5, 215)
+scale = Vector2(0.506983, 0.506983)
+texture = ExtResource("2_ffdfx")
+
+[node name="TextureRect2" type="Sprite2D" parent="Panel" index="3"]
+position = Vector2(69.5, 317)
+scale = Vector2(0.550992, 0.550992)
+texture = ExtResource("3_kmaku")
+
+[node name="TextureRect3" type="Sprite2D" parent="Panel" index="4"]
+position = Vector2(186.5, 322)
+scale = Vector2(0.484535, 0.484535)
+texture = ExtResource("4_xdsw6")
+
+[node name="Label" type="Label" parent="Panel" index="5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 15.0
+offset_right = 100.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme = ExtResource("5_wjuxg")
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+
+[node name="Label2" type="Label" parent="Panel" index="6"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 102.0
+offset_right = 243.0
+offset_bottom = 153.0
+theme = ExtResource("5_wjuxg")
+text = "- To move, use arrow keys or WASD.
+- Zoom the camera in/out with C.
+"
+
+[node name="Label3" type="Label" parent="Panel" index="7"]
+layout_mode = 0
+offset_left = 184.5
+offset_top = 170.0
+offset_right = 874.5
+offset_bottom = 263.0
+theme = ExtResource("5_wjuxg")
+text = "- Collect all coins (the weird little flashing purple things) to win.
+- Robots will help you collect coins
+- If you want to descend quickly, press the down or S key to remove 
+  the plank below you"
+
+[node name="Label4" type="Label" parent="Panel" index="8"]
+layout_mode = 0
+offset_left = 29.5
+offset_top = 419.0
+offset_right = 719.5
+offset_bottom = 536.0
+theme = ExtResource("5_wjuxg")
+text = "- The builder builds new structures so you can navigate the map
+  easier. Click on the screen to call the builder over to an
+  area that needs attention.
+- Watch out for bombs! They will destroy parts of the fortress
+  and will generally make your life difficult. Save the fortress
+  before time runs out, or else..."
+
+[node name="Builder" type="Sprite2D" parent="Panel" index="9"]
+position = Vector2(860, 340)
+scale = Vector2(0.372054, 0.372054)
+texture = ExtResource("6_lu7ij")
+
+[node name="Target" type="Sprite2D" parent="Panel" index="10"]
+position = Vector2(706, 336)
+scale = Vector2(0.622449, 0.622449)
+texture = ExtResource("7_354oi")
+
+[node name="Bomb" type="Sprite2D" parent="Panel" index="11"]
+position = Vector2(792, 477)
+scale = Vector2(1.03947, 1.03947)
+texture = ExtResource("8_pq05u")

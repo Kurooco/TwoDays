@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq78ane1yx2ai"]
+[gd_scene load_steps=7 format=3 uid="uid://cq78ane1yx2ai"]
 
 [ext_resource type="Script" path="res://scripts/platform.gd" id="1_x4jcs"]
 [ext_resource type="SpriteFrames" uid="uid://kt34kulg8jrc" path="res://resources/popsicle.tres" id="2_bteep"]
+[ext_resource type="AudioStream" uid="uid://d1ysh04gqdkfq" path="res://sound/stick_hit.wav" id="3_yd7pi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l64j7"]
 bounce = 0.3
@@ -53,3 +54,8 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDestroy"]
 position = Vector2(2.19345e-05, 7.00001)
 shape = SubResource("RectangleShape2D_jyhxk")
+
+[node name="StickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yd7pi")
+max_polyphony = 5
+bus = &"sfx"

@@ -1,8 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dqbpmu56mfygv"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dqbpmu56mfygv"]
 
 [ext_resource type="FontFile" uid="uid://m2cn4sx6v0gg" path="res://fonts/Workbench-Regular-VariableFont_BLED,SCAN.ttf" id="1_y5of6"]
 [ext_resource type="StyleBox" uid="uid://c4l6ghylabytv" path="res://resources/button_background.tres" id="2_bkc0s"]
-[ext_resource type="Texture2D" uid="uid://b3vpyal4pxgck" path="res://art/explosion.png" id="3_u65fk"]
+[ext_resource type="Texture2D" uid="uid://brl4lf0d8mhoh" path="res://art/bomb.png" id="3_x5n3t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jtfs"]
 bg_color = Color(0.035756, 0.0416729, 0.163822, 1)
@@ -24,15 +24,24 @@ bg_color = Color(0.904088, 0.457365, 0.207962, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quu6s"]
 bg_color = Color(0.92745, 0.436293, 0.189874, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhljj"]
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0.537255, 0, 0, 0.6)
+shadow_size = 6
+shadow_offset = Vector2(1, 1)
+
 [resource]
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_y5of6")
 Button/styles/hover = SubResource("StyleBoxFlat_5jtfs")
 Button/styles/normal = ExtResource("2_bkc0s")
-HSlider/constants/center_grabber = 1
-HSlider/icons/grabber = ExtResource("3_u65fk")
-HSlider/icons/grabber_highlight = ExtResource("3_u65fk")
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 1
+HSlider/icons/grabber = ExtResource("3_x5n3t")
+HSlider/icons/grabber_highlight = ExtResource("3_x5n3t")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_bdkfl")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_quu6s")
+HSlider/styles/slider = SubResource("StyleBoxFlat_vhljj")
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_y5of6")

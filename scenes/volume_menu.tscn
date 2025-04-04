@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1fo017rjksgy"]
+[gd_scene load_steps=4 format=3 uid="uid://d1fo017rjksgy"]
 
 [ext_resource type="PackedScene" uid="uid://cq42jpp6r5j5q" path="res://scenes/option_menu.tscn" id="1_ld4v1"]
 [ext_resource type="PackedScene" uid="uid://fgygdj5iosuc" path="res://scenes/volume_slider.tscn" id="2_c4n53"]
 [ext_resource type="Theme" uid="uid://dqbpmu56mfygv" path="res://resources/button_theme.tres" id="2_sob5w"]
-[ext_resource type="StyleBox" uid="uid://ci6ctg8r625dj" path="res://resources/menu_panel.tres" id="2_spde6"]
 
 [node name="Control" instance=ExtResource("1_ld4v1")]
-
-[node name="Panel" parent="." index="1"]
-theme_override_styles/panel = ExtResource("2_spde6")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer" index="0"]
 layout_mode = 2

@@ -42,5 +42,7 @@ texture = ExtResource("4_fqlbe")
 
 [node name="FocusSound" type="AudioStreamPlayer" parent="Target"]
 stream = ExtResource("5_2o0wf")
+volume_db = 5.0
+bus = &"sfx"
 
 [connection signal="timeout" from="Builder/Timer" to="Builder" method="_on_timer_timeout"]

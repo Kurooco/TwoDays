@@ -1,7 +1,7 @@
 extends Area2D
 
-const FIRE_SPEED = 800
-const RADIUS = 200
+const FIRE_SPEED = 1000 #800
+const RADIUS = 250 #200
 
 var fire_direction
 

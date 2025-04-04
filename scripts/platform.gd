@@ -9,7 +9,7 @@ var prev_vel = Vector2(-INF, -INF)
 func _ready():
 	$Sprite2D.frame = randi()%4
 	call_deferred("set_freeze_enabled", true)
-	$StickSound.pitch_scale = randf_range(.6, 2)
+	$StickSound.pitch_scale = randf_range(.5, 2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
